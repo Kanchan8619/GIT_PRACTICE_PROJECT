@@ -4,3 +4,5 @@ print(a+b)
 
 b = 50
 print(a+b)
+
+print(a-b)
