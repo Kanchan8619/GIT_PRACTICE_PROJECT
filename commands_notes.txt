@@ -1,0 +1,81 @@
+git --version
+git status
+git init -: initialize empty git repository (hidden folder formed)
+rm -rf .git -: git folder remove
+git status -:( after remove , now again No repo)
+git init -b main -: will start main Branch ( not the master one)
+git status -: (will show "On branch Main)
+
+## Adding files in Git
+git status -: if new file is there, it shows "untracked files" . Need to add in git "staging area"
+git add "filename" -: file will add in "staging area"
+git add . -: Dot will add all the files in the staging area
+git rm --cached "filename" -: remove/unstage file from "staging area"
+git log 
+git commit -m "give relevant message"
+## git provides integrity, so any small change in the file, git will recognize it as it gives checksum for each commit.
+## 'M' will pop next to file name, if we make any changes in teh file.
+## whenever we make change in file, add it to the staging area then do commit.
+
+## We can do "Commit" directly without staging also using 
+git commit -a -m "message"
+
+git diff
+git diff --staged ( when file added to staging area)
+
+git rm --cached "filename" ## remove file from local git
+
+## Creating remote repository
+git init -: it creates Local Repo in your local machine
+
+## new repo in github.com
+quicksetup -: https or ssh(unique link for your repo)
+
+## now one is local repo nd other is remote repo
+## I want to push a file from local to remote
+mkdir git_firstproject  (mage dir in terminal give name as "new repo")
+cd git_firstproject  
+echo "git learning" >> readme.md (make file nd put data inside file)
+cat readme.md   -: can see the data inside this file
+# make this folder git enable "git_firstproject"
+git init
+git status
+git add readme.md
+git commit -m "first commit for remote repo" -: done in local repo
+git branch -M main
+## now connect local repo to remote
+ssh-keygen -o
+<!-- Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\kchoubey/.ssh/id_rsa):
+Created directory 'C:\\Users\\kchoubey/.ssh'.
+Enter passphrase (empty for no passphrase): -->
+<!-- Your identification has been saved in C:\Users\kchoubey/.ssh/id_rsa -->
+<!-- cd.. , ls -: u can see .ssh here inside kchoubey -->
+cd .ssh, ls , 
+ # id_rsa.pub -: here we find our key
+cat id_rsa.pub -: here is the key , now where to use this key
+## github -: settings-: ssh/gpg key -: Paste the Key here
+## Back to terminal
+cd .\git_firstproject\
+git remote add origin git@github.com:Kanchan8619/git_firstproject.git  -:## mapped the local and remote
+## Now push the readme file in remote which is sitting in local
+git push -u origin main  -: now pushing is done means push the code/file from local to Repo
+git push -u origin main
+git remote -v
+## git tagging
+git tag
+git tag -a "version name" -m "message"
+git tag show "version name"
+git push origin v1.0
+
+## git clone
+## In github, open any public repo, then u can clone it in your local machine using https/sch link
+git clone "https"
+
+## git branching
+git switch/checkout -b "branchname"
+git switch -c feature_two  -: Switched to a new branch 'feature_two'
+git branch
+git branch --all -: will display remote branch too
+git switch -    -: Switched to branch 'feature_one'
+git branch -d feature_two -: Deleted branch feature_two (was 434d16e).
