@@ -23,7 +23,13 @@ git commit -a -m "message"
 git diff
 git diff --staged ( when file added to staging area)
 
-git rm --cached "filename" ## remove file from local git
+git rm --cached "filename" ## remove file from local git 
+## connecting local to remote 
+## create new repo in GitHub
+git remote add origin <link name from remote repo >https://github.com/Kanchan8619/GIT_PRACTICE_PROJECT.git
+git remote -v
+origin  https://github.com/Kanchan8619/GIT_PRACTICE_PROJECT.git (fetch)
+origin  https://github.com/Kanchan8619/GIT_PRACTICE_PROJECT.git (push)
 
 ## Creating remote repository
 git init -: it creates Local Repo in your local machine
